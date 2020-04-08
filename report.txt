@@ -1,0 +1,288 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 17.0.6.256 Build 20171215
+
+Compiler options: -mavx -qoverride_limits -shared-intel -mcmodel=medium -O3 -ftz -align all -fno-alias -inline-level=2 -ip -ipo -mieee-fp -init=arrays,zero -double-size 128 -real-size 128 -integer-size 32 -lsvml -o quadge
+
+Begin optimization report for: MAIN
+
+    Report from: Loop nest & Vector optimizations [loop, vec]
+
+
+LOOP BEGIN at SIN.f(70,10) inlined into MAIN.f(70,12)
+   remark #15382: vectorization support: call to function for_read_seq_fmt cannot be vectorized   [ SIN.f(71,7) ]
+   remark #15382: vectorization support: call to function for_read_seq_fmt_xmit cannot be vectorized   [ SIN.f(71,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ SIN.f(72,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ SIN.f(72,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (71:7) and at (72:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (72:7) and at (71:7)
+   remark #25015: Estimate of max trip count of loop=71
+LOOP END
+
+LOOP BEGIN at SIN.f(78,10) inlined into MAIN.f(70,12)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between FAC3 (80:7) and FAC3 (83:7)
+   remark #15346: vector dependence: assumed ANTI dependence between FAC3 (83:7) and FAC3 (80:7)
+   remark #25436: completely unrolled by 2  
+LOOP END
+
+LOOP BEGIN at SIN.f(94,10) inlined into MAIN.f(70,12)
+   remark #25427: Loop Statements Reordered
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between A (96:7) and A (98:7)
+   remark #15346: vector dependence: assumed ANTI dependence between A (98:7) and A (96:7)
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 4
+LOOP END
+
+LOOP BEGIN at SIN.f(108,10) inlined into MAIN.f(70,12)
+   remark #15310: loop was not vectorized: operation cannot be vectorized   [ SIN.f(109,7) ]
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at SIN.f(108,10) inlined into MAIN.f(70,12)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at SIN.f(117,7) inlined into MAIN.f(70,12)
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between at (117:7) and at (117:7)
+   remark #15346: vector dependence: assumed ANTI dependence between at (117:7) and at (117:7)
+LOOP END
+
+LOOP BEGIN at SIN.f(119,10) inlined into MAIN.f(70,12)
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ SIN.f(128,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ SIN.f(129,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ SIN.f(129,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ SIN.f(129,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ SIN.f(129,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ SIN.f(129,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ SIN.f(129,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between TERM (122:7) and TERM (129:7)
+   remark #25015: Estimate of max trip count of loop=26
+
+   LOOP BEGIN at SIN.f(121,10) inlined into MAIN.f(70,12)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+      remark #25015: Estimate of max trip count of loop=71
+   LOOP END
+LOOP END
+
+LOOP BEGIN at MAIN.f(75,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ MAIN.f(90,10) ]
+   remark #25015: Estimate of max trip count of loop=25
+
+   LOOP BEGIN at MAIN.f(89,5)
+      remark #15382: vectorization support: call to function for_read_seq_fmt_xmit cannot be vectorized   [ MAIN.f(89,7) ]
+      remark #15382: vectorization support: call to function for_read_seq_fmt_xmit cannot be vectorized   [ MAIN.f(89,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between ab%be_field (89:7) and ab (89:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between ab (89:7) and ab%be_field (89:7)
+      remark #25015: Estimate of max trip count of loop=5850
+   LOOP END
+
+   LOOP BEGIN at MAIN.f(90,10)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between b(ibrth(iin-1)+ion) (95:7) and b(ibrth(iin-1)+ion) (93:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between b(ibrth(iin-1)+ion) (93:7) and b(ibrth(iin-1)+ion) (95:7)
+      remark #25015: Estimate of max trip count of loop=5850
+   LOOP END
+LOOP END
+
+LOOP BEGIN at MAIN.f(105,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ MAIN.f(124,10) ]
+   remark #25015: Estimate of max trip count of loop=51
+
+   LOOP BEGIN at MAIN.f(119,4)
+      remark #15382: vectorization support: call to function for_read_seq_fmt_xmit cannot be vectorized   [ MAIN.f(119,7) ]
+      remark #15382: vectorization support: call to function for_read_seq_fmt_xmit cannot be vectorized   [ MAIN.f(119,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between d2%be_field (119:7) and d2 (119:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between d2 (119:7) and d2%be_field (119:7)
+   LOOP END
+
+   LOOP BEGIN at MAIN.f(124,10)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between zeros(izrth(io)+io-ii+1) (125:7) and zeros(izrth(io)+ii) (125:7)
+      remark #15346: vector dependence: assumed ANTI dependence between zeros(izrth(io)+ii) (125:7) and zeros(izrth(io)+io-ii+1) (125:7)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at MAIN.f(124,10)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ACOEF.f(45,10) inlined into MAIN.f(130,12)
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ ACOEF.f(86,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ ACOEF.f(86,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ ACOEF.f(86,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between P(1) (53:7) and P(LIT1) (77:7)
+   remark #15346: vector dependence: assumed ANTI dependence between P(LIT1) (77:7) and P(1) (53:7)
+   remark #25015: Estimate of max trip count of loop=25
+
+   LOOP BEGIN at ACOEF.f(51,10) inlined into MAIN.f(130,12)
+      remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ ACOEF.f(86,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ ACOEF.f(86,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ ACOEF.f(86,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between P(1) (53:7) and P(LIT1) (77:7)
+      remark #15346: vector dependence: assumed ANTI dependence between P(LIT1) (77:7) and P(1) (53:7)
+
+      LOOP BEGIN at ACOEF.f(58,10) inlined into MAIN.f(130,12)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed ANTI dependence between YIT (61:7) and YIT (60:7)
+         remark #15346: vector dependence: assumed FLOW dependence between YIT (60:7) and YIT (61:7)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         remark #25015: Estimate of max trip count of loop=26
+      LOOP END
+
+      LOOP BEGIN at ACOEF.f(67,10) inlined into MAIN.f(130,12)
+         remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ ACOEF.f(86,7) ]
+         remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ ACOEF.f(86,7) ]
+         remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ ACOEF.f(86,7) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between P(1) (69:7) and P(LIT1) (77:7)
+         remark #15346: vector dependence: assumed ANTI dependence between P(LIT1) (77:7) and P(1) (69:7)
+
+         LOOP BEGIN at ACOEF.f(71,10) inlined into MAIN.f(130,12)
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed ANTI dependence between YIT (74:7) and YIT (73:7)
+            remark #15346: vector dependence: assumed FLOW dependence between YIT (73:7) and YIT (74:7)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+            remark #25015: Estimate of max trip count of loop=26
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at MAIN.f(134,10)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between fzeros(izrth(k)+in) (136:7) and fzeros(izrth(k)+in) (136:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between fzeros(izrth(k)+in) (136:7) and fzeros(izrth(k)+in) (136:7)
+   remark #25015: Estimate of max trip count of loop=51
+
+   LOOP BEGIN at MAIN.f(135,10)
+      remark #15310: loop was not vectorized: operation cannot be vectorized   [ MAIN.f(136,7) ]
+   LOOP END
+LOOP END
+
+LOOP BEGIN at MAIN.f(142,10)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=25
+
+   LOOP BEGIN at MAIN.f(156,10)
+      remark #15310: loop was not vectorized: operation cannot be vectorized   [ MAIN.f(158,7) ]
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at MAIN.f(156,10)
+   <Remainder>
+   LOOP END
+
+   LOOP BEGIN at MAIN.f(163,10)
+      remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(167,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(167,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(192,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(192,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(192,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (167:7) and at (192:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (192:7) and at (167:7)
+
+      LOOP BEGIN at MAIN.f(177,10)
+         remark #15310: loop was not vectorized: operation cannot be vectorized   [ MAIN.f(180,7) ]
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at MAIN.f(177,10)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at MAIN.f(170,10)
+         remark #15310: loop was not vectorized: operation cannot be vectorized   [ MAIN.f(173,7) ]
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at MAIN.f(170,10)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at MAIN.f(187,10)
+         remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(192,7) ]
+         remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(192,7) ]
+         remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(192,7) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (192:7) and at (192:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (192:7) and at (192:7)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at MAIN.f(223,10)
+      remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(225,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(225,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(225,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (225:7) and at (225:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (225:7) and at (225:7)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at MAIN.f(258,10)
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(265,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(265,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(265,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(265,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(265,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (265:7) and at (265:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (265:7) and at (265:7)
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 4
+   remark #25015: Estimate of max trip count of loop=25
+LOOP END
+
+LOOP BEGIN at MAIN.f(273,10)
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(274,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (274:7) and at (274:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (274:7) and at (274:7)
+LOOP END
+
+LOOP BEGIN at MAIN.f(286,10)
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(289,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(297,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(297,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(301,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(301,7) ]
+   remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(301,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (289:7) and at (301:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (301:7) and at (289:7)
+   remark #25015: Estimate of max trip count of loop=25
+
+   LOOP BEGIN at MAIN.f(295,10)
+      remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(297,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(297,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(301,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(301,7) ]
+      remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(301,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (297:7) and at (301:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (301:7) and at (297:7)
+
+      LOOP BEGIN at MAIN.f(298,10)
+         remark #15382: vectorization support: call to function for_write_seq_fmt cannot be vectorized   [ MAIN.f(301,7) ]
+         remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(301,7) ]
+         remark #15382: vectorization support: call to function for_write_seq_fmt_xmit cannot be vectorized   [ MAIN.f(301,7) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (301:7) and at (301:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (301:7) and at (301:7)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

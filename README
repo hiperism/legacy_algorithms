@@ -1,0 +1,36 @@
+
+!
+!   Copyright 1974-2020 George Delic, HiPERISM Consulting LLC
+!
+!   This program is free software: you can redistribute it and/or modify
+!   it under the terms of the GNU General Public License as published by
+!   the Free Software Foundation, either version 3 of the License, or
+!   any later version.
+!
+!   This program is distributed in the hope that it will be useful,
+!   but WITHOUT ANY WARRANTY; without even the implied warranty of
+!   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+!   See the GNU General Public License for more details.
+!      https://www.gnu.org/licenses/gpl-3.0.en.html
+!      https://www.gnu.org/licenses/gpl-3.0.txt
+!   A copy is included in this distribution
+!
+! PURPOSE: This is source code for computations described in
+!          G. Delic,
+!          The legendre series and a quadrature formula for its coefficients,
+!          Journal of Computational Physics, vol. 14 (1974), pp. 254-268.
+!          ( see draft in file JCP-14-1974-rev1.pdf )
+!
+! AUTHOR:  George Delic, Ph.D.,
+!
+! ORIGIN:  Source code developed by AUTHOR
+!
+! LANGUAGE:  FOTRAN IV and Fortran 77 (ANSI X3J3) X3.9-1978
+!
+! to compile on a Linux Operating System:
+!            make > make.log 2>&1
+! to run on a LinuX Operating System:
+!            ./run
+! verify output by comparison with:
+!             quadge.out.backup
+!
